@@ -38,7 +38,7 @@ var apiLib = {
         xhttp.send();
     }
 };
-apiLib.get("./bible/3John.json",function(data){let jsonKJV=data;});
+apiLib.get("./bible/3John.json",function(data){jsonKJV=data;});
 function getBook(bookGet) {
     var i = 0;
     while (bible[i].id != bookGet) {
@@ -82,7 +82,7 @@ function getVerses(reference, version) {
         var theChapter = a.chapter;
         var theBook = a.book.name.split(' ').join('');
         //jsonKJV = require('./bible/' + theBook + '.json');
-        apiLib.get("./bible/"+theBook+".json",function(data){let jsonKJV=data;});
+        apiLib.get("./bible/"+theBook+".json",function(data){jsonKJV=data;});
         //jsonKJV = jsonKJV.chapters[0].verses[0]["1"];
         var length = "0";
         var toAdd = '';
