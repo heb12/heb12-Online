@@ -6,13 +6,13 @@ var jsonKJV;
 var chapterAndVerse = function(reference) {
 var z = reference.split(" ");
 
-    if (z.length>2) {
+    if (z.length>1) {
     var verse = z[z.length-1];
     } else {
     var verse = "1-";
     }
     z.pop();
-        if (z.length>1) {
+        if (z.length>0) {
     var chapter = z[z.length-1];
     } else {
     var chapter = "1-";
