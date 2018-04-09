@@ -11,13 +11,13 @@ var z = reference.split(" ");
     } else {
     var verse = "1-";
     }
-    z.pop;
+    z.pop();
         if (z.length>1) {
     var chapter = z[z.length-1];
     } else {
     var chapter = "1-";
     }
-    z.pop;
+    z.pop();
     var book = z.join(" ");
 var obj = new Object();
     obj.verse = verse;
