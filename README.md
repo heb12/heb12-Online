@@ -1,7 +1,5 @@
 # Heb12 Online App
 The online version of the Heb12 Web App Windows version.
-# Heb12 Bible App
-A Linux program for reading the Bible.
 
 ![screenshot from 2018-04-05 15-05-02](https://user-images.githubusercontent.com/16640496/38394328-e20f67f6-38e2-11e8-96bc-16c37116956e.png)
 
