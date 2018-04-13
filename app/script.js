@@ -89,17 +89,17 @@ function getVerses(reference, version) {
         var i = 0;
         for (var i = 0; i < jsonKJV.chapters[Number(theChapter) - 1].verses.length; i++) {
             toAdd = toAdd + '<p class="verse">' + '<b class="vref">' + (i + 1) + '</b> ' + jsonKJV.chapters[Number(theChapter) - 1].verses[i][i + 1] + '</p>';
-            
+
         }
         document.getElementById('scripture').innerHTML = toAdd;
         document.getElementById('error').style.display = 'none';
     }
     document.body.scrollTop = document.documentElement.scrollTop = 0;
     document.getElementById('result').style.display = 'block';
-    document.title = chapterAndVerse(document.getElementById('book').value).book.name + ' ' + document.getElementById('chapter').value + ' - ' + 'Heb12 Bible App';
+    document.title = document.getElementById('book').value + ' ' + document.getElementById('chapter').value + ' - ' + 'Heb12 Bible App';
     localStorage.setItem("lastRef", chapterAndVerse(document.getElementById('book').value).book.name + ' ' + document.getElementById('chapter').value);
     console.log(localStorage.getItem('lastRef'));
-    
+
 }
 var chapter, chapterE, books;
 
@@ -114,7 +114,7 @@ function nextChapter() {
     books = document.getElementsByClassName('book');
     chapter = document.getElementById('chapter');
     chapterE = document.getElementById('book').value;
-    
+
     if ((bible[getBook(chapterE)].chapters.length > 1) && (chapter.value != (bible[getBook(chapterE)].chapters.length))) {
         chapter.selectedIndex = Number(chapter.value);
         updateText();
@@ -194,7 +194,7 @@ function changeFont() {
     } else {
         document.getElementById('scripture').style.fontFamily = document.getElementById('font').value;
     }
-    
+
 }
 function changeTheme() {
     localStorage.setItem('theme', document.getElementById('theme').value);
@@ -215,7 +215,7 @@ function setup() {
     localStorage.setItem('theme', 'theme1');
     localStorage.setItem('textAlign', 'left');
     console.log("Finished first-time setup of localStorage");
-    
+
 }
 // Resets the program's localStorage
 function reset() {
@@ -307,4 +307,3 @@ console.log(translations + ' is the translation loaded from localStorage.');
 if (translation == 'kjv') {
     sel.selectedIndex = 2;
 }
-
