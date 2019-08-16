@@ -57,7 +57,7 @@ function getVerses(reference, version) {
         } else {
             document.getElementById('error').style.display = 'none';
         }
-        url = 'http://labs.bible.org/api/?passage= ' + reference + '&formatting=full';
+        url = 'https://labs.bible.org/api/?passage= ' + reference + '&formatting=full';
         fetch(url, {
             mode: 'cors'
         })
