@@ -67,7 +67,7 @@ function getVerses(reference, version) {
         var display = function (result) {
                     document.getElementById('scripture').innerHTML = Function("return "+result)();
                     //document.getElementById('reference').innerHTML = reference;
-                    document.getElementById('error').style.display = 'none';/*}
+                    document.getElementById('error').style.display = 'none';}/*}
                 } else {
                     document.getElementById('error').style.display = 'block';
                     document.getElementById('error').innerHTML = 'Pardon, there was an error fetching the translation, please try again later';
