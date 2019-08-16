@@ -64,7 +64,7 @@ function getVerses(reference, version) {
             .then(response => response.text())
             .then(result => {
                 if (result != '') {*/
-        var display = function (result) {
+        window.display = function (result) {
                     document.getElementById('scripture').innerHTML = Function("return "+result)();
                     //document.getElementById('reference').innerHTML = reference;
                     document.getElementById('error').style.display = 'none';}/*}
