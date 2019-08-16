@@ -66,9 +66,13 @@ function getVerses(reference, version) {
                 if (result != '') {*/
         window.display = function (result) {
             console.log(result);
-                    document.getElementById('scripture').innerHTML = Function("return "+result.text)();
+            document.getElementById('scripture').innerHTML = "";
+            for(var i=0; i<result.length; i++) {
+                    document.getElementById('scripture').innerHTML += result[i].text;
                     //document.getElementById('reference').innerHTML = reference;
-                    document.getElementById('error').style.display = 'none';}/*}
+                    document.getElementById('error').style.display = 'none';
+            
+            }}/*}
                 } else {
                     document.getElementById('error').style.display = 'block';
                     document.getElementById('error').innerHTML = 'Pardon, there was an error fetching the translation, please try again later';
