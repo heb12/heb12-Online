@@ -57,7 +57,7 @@ function getVerses(reference, version) {
         } else {
             document.getElementById('error').style.display = 'none';
         }
-        url = 'https://labs.bible.org/api/?passage= ' + reference + '&type=json&callback=String&formatting=full';
+        url = 'https://labs.bible.org/api/?passage= ' + reference + '&type=json&callback=display&formatting=full';
         /*fetch(url, {
             mode: 'cors'
         })
@@ -76,7 +76,7 @@ function getVerses(reference, version) {
                 document.getElementById('result').display = 'block';
                 return result;
             });*/
-        jQuery.getScript(url).done(display);
+        jQuery.getScript(url).done(function(){});
     }
     // Renders KJV
     else {
