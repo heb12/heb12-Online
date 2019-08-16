@@ -65,7 +65,7 @@ function getVerses(reference, version) {
             .then(result => {
                 if (result != '') {*/
         window.display = function (result) {
-                    document.getElementById('scripture').innerHTML = Function("return "+result)();
+                    document.getElementById('scripture').innerHTML = Function("return "+result.text)();
                     //document.getElementById('reference').innerHTML = reference;
                     document.getElementById('error').style.display = 'none';}/*}
                 } else {
@@ -76,7 +76,7 @@ function getVerses(reference, version) {
                 document.getElementById('result').display = 'block';
                 return result;
             });*/
-        jQuery.getScript(url).done(function(){});
+        jQuery.getScript(url);
     }
     // Renders KJV
     else {
