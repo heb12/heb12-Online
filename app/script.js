@@ -57,14 +57,14 @@ function getVerses(reference, version) {
         } else {
             document.getElementById('error').style.display = 'none';
         }
-        url = 'https://labs.bible.org/api/?passage= ' + reference + '&formatting=full';
+        url = 'https://labs.bible.org/api/?passage= ' + reference + '&type=json&callback=String&formatting=full';
         fetch(url, {
             mode: 'cors'
         })
             .then(response => response.text())
             .then(result => {
                 if (result != '') {
-                    document.getElementById('scripture').innerHTML = result;
+                    document.getElementById('scripture').innerHTML = Function("return "+result)();
                     //document.getElementById('reference').innerHTML = reference;
                     document.getElementById('error').style.display = 'none';
                 } else {
