@@ -58,15 +58,16 @@ function getVerses(reference, version) {
             document.getElementById('error').style.display = 'none';
         }
         url = 'https://labs.bible.org/api/?passage= ' + reference + '&type=json&callback=String&formatting=full';
-        fetch(url, {
+        /*fetch(url, {
             mode: 'cors'
         })
             .then(response => response.text())
             .then(result => {
-                if (result != '') {
+                if (result != '') {*/
+        var display = function (result) {
                     document.getElementById('scripture').innerHTML = Function("return "+result)();
                     //document.getElementById('reference').innerHTML = reference;
-                    document.getElementById('error').style.display = 'none';
+                    document.getElementById('error').style.display = 'none';/*}
                 } else {
                     document.getElementById('error').style.display = 'block';
                     document.getElementById('error').innerHTML = 'Pardon, there was an error fetching the translation, please try again later';
@@ -74,7 +75,8 @@ function getVerses(reference, version) {
                 }
                 document.getElementById('result').display = 'block';
                 return result;
-            });
+            });*/
+        jQuery.getScript(url).done(display);
     }
     // Renders KJV
     else {
